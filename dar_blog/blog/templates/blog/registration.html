@@ -1,19 +1,16 @@
 <!DOCTYPE html>
-{% load static %}
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Login page</title>
-    <link rel="stylesheet" href="{% static 'blog/css/style.css' %}">
+    <title>Registration</title>
 </head>
 <body>
-<h2>Login page. Welcome</h2>
+<h1>Registration users...</h1>
 <form action="" method="post">
     {% csrf_token %}
     {{ form.as_p }}
     <button type="submit">Log-in&#10132;</button>
 </form>
-<a href="{% url 'registration' %}">Пройти регистрацию...</a>
 
 </body>
 </html>
