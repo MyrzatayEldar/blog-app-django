@@ -6,10 +6,10 @@
 </head>
 <body>
 <h1>Registration users...</h1>
-<form action="" method="post">
+<form action="" method="post" enctype="multipart/form-data">
     {% csrf_token %}
     {{ form.as_p }}
-    <button type="submit">Log-in&#10132;</button>
+    <button type="submit">Registrate&#10132;</button>
 </form>
 
 </body>

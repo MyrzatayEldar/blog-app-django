@@ -129,3 +129,6 @@ MEDIA_URL = '/media/'
 
 AUTH_USER_MODEL = "blog.User"
 
+LOGIN_REDIRECT_URL = "/"
+LOGOUT_REDIRECT_URL = "/"
+
