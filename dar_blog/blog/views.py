@@ -26,7 +26,7 @@ def login_view(request):
 
 @login_required(login_url='/')
 def main(request):
-    return render(request, 'blog/main.html', {})
+    return render(request, 'blog/main.html', {'title': 'Main page'})
 
 
 def register_user(request):
