@@ -5,3 +5,9 @@ from django.db import models
 class User(AbstractUser):
     surname = models.CharField(max_length=255, verbose_name='Отчество')
     image = models.ImageField(upload_to='user_pictures/', verbose_name='Фото профиля')
+
+
+class Post(models.Model):
+    author = models.OneToOneField('User')
+    published_date = models.DateTimeField(auto_now_add=True)
+    text = models.TextField()
