@@ -44,3 +44,6 @@ def register_user(request):
         form = RegistrationForm()
     return render(request, 'blog/registration.html', {'form': form})
 
+
+def show_test_page(request):
+    return render(request, 'blog/test.html', {})
