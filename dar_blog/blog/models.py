@@ -4,7 +4,7 @@ from django.db import models
 
 class User(AbstractUser):
     surname = models.CharField(max_length=255, verbose_name='Отчество')
-    image = models.ImageField(upload_to=f'user_pictures/{User.username}/', verbose_name='Фото профиля')
+    image = models.ImageField(upload_to='user_pictures/', verbose_name='Фото профиля')
 
 
 class Post(models.Model):
@@ -13,7 +13,7 @@ class Post(models.Model):
     published_date = models.DateTimeField(auto_now_add=True, verbose_name='Дата написания')
     text = models.TextField(verbose_name='Текст поста')
     category = models.ManyToManyField('Category', verbose_name='Категория')
-    image = models.ImageField(upload_to=f'post_pictures/{author}', verbose_name='Фото')
+    image = models.ImageField(upload_to='post_pictures/', verbose_name='Фото')
 
     class Meta:
         verbose_name = 'Пост'
