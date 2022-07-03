@@ -62,4 +62,10 @@ class RegistrationForm(UserCreationForm):
                 'class': 'form-control',
                 'placeholder': 'Фото профиля'}),
         }
+
+
+class PostWritingForm(forms.ModelForm):
+    class Meta:
+        model = Post
+        exclude = ('author', 'published_date')
 #suckabiglemon

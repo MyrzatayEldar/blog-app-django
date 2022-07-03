@@ -26,7 +26,8 @@ def login_view(request):
 
 @login_required(login_url='/')
 def main(request):
-    return render(request, 'blog/main.html', {'title': 'Main page'})
+    posts = Post.objects.all()
+    return render(request, 'blog/main.html', {'title': 'Main page', 'posts': posts})
 
 
 def register_user(request):
@@ -47,3 +48,18 @@ def register_user(request):
 
 def show_test_page(request):
     return render(request, 'blog/test.html', {})
+
+
+@login_required(login_url='/')
+def write_post(request):
+    if request.method == 'POST':
+        form = PostWritingForm(request.POST, request.FILES)
+        if form.is_valid():
+            a = form.save(commit=False)
+            a.author = request.user
+            a.save()
+            form.save_m2m()
+            return redirect('main')
+    else:
+        form = PostWritingForm
+    return render(request, 'blog/write_post.html', {'form': form})

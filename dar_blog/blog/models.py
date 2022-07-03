@@ -8,7 +8,7 @@ class User(AbstractUser):
 
 
 class Post(models.Model):
-    author = models.OneToOneField('User', on_delete=models.CASCADE, verbose_name='Автор')
+    author = models.ForeignKey('User', on_delete=models.CASCADE, verbose_name='Автор')
     title = models.CharField(max_length=255, verbose_name='Тема поста')
     published_date = models.DateTimeField(auto_now_add=True, verbose_name='Дата написания')
     text = models.TextField(verbose_name='Текст поста')

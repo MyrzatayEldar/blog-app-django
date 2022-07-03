@@ -8,6 +8,12 @@
 <h2>maaaaain!!!</h2>
 <h3> logged in as {{ request.user }} </h3>
 <a href="{% url 'logout' %}" class="btn btn-primary">Logout!</a>
-
-
+<a href="{% url 'write_post' %}" class="btn btn-primary">Write Post</a>
+<br><br><br>
+{% for p in posts %}
+{{ p.author }}
+{{ p.title }}
+{{ p.text }}
+<br>
+{% endfor %}
 {% endblock content %}
