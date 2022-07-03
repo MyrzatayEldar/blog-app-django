@@ -27,7 +27,8 @@ def login_view(request):
 @login_required(login_url='/')
 def main(request):
     posts = Post.objects.all()
-    return render(request, 'blog/main.html', {'title': 'Main page', 'posts': posts})
+    user = request.user
+    return render(request, 'blog/main.html', {'title': f'{user}\'s page', 'posts': posts})
 
 
 def register_user(request):

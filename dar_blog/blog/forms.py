@@ -48,15 +48,17 @@ class RegistrationForm(UserCreationForm):
                 'id': 'username',
                 'class': 'form-control',
                 'placeholder': 'Имя пользователя'}),
-            'password1': forms.PasswordInput(attrs={
+            'password1': forms.TextInput(attrs={
                 'id': 'form3Example4c',
+                'type': 'password',
                 'class': 'form-control',
                 'placeholder': 'Ваш пароль'}),
-            'password2': forms.PasswordInput(attrs={
+            'password2': forms.TextInput(attrs={
                 'id': 'form3Example4cd',
+                'type': 'password',
                 'class': 'form-control',
                 'placeholder': 'Повторите пароль'}),
-            'image': forms.TextInput(attrs={
+            'image': forms.FileInput(attrs={
                 'type': 'file',
                 'id': 'file',
                 'class': 'form-control',
