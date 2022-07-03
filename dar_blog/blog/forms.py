@@ -49,12 +49,10 @@ class RegistrationForm(UserCreationForm):
                 'class': 'form-control',
                 'placeholder': 'Имя пользователя'}),
             'password1': forms.PasswordInput(attrs={
-                'type': 'password',
                 'id': 'form3Example4c',
                 'class': 'form-control',
                 'placeholder': 'Ваш пароль'}),
             'password2': forms.PasswordInput(attrs={
-                'type': 'password',
                 'id': 'form3Example4cd',
                 'class': 'form-control',
                 'placeholder': 'Повторите пароль'}),
@@ -64,3 +62,4 @@ class RegistrationForm(UserCreationForm):
                 'class': 'form-control',
                 'placeholder': 'Фото профиля'}),
         }
+#suckabiglemon
