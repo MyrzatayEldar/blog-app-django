@@ -1,4 +1,8 @@
-body{
-    background: url("/static/blog/images/background.jpg") 10% 0 no-repeat fixed;
-    background-size: 1800px 900px;
+.main{
+    width: 80%;
+    height: 100%;
+    border: 1px white solid;
+    background-color: #faf9f9;
+    margin: 50px 10% 50px 10%;
 }
+

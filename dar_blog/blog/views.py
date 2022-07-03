@@ -63,4 +63,5 @@ def write_post(request):
             return redirect('main')
     else:
         form = PostWritingForm
-    return render(request, 'blog/write_post.html', {'form': form})
+    return render(request, 'blog/write_post.html', {'form': form, 'title': 'Страница написания поста'})
+
