@@ -11,16 +11,16 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="shortcut icon" href="{% static 'blog/images/login.png' %}">
 </head>
-<body style="background: #000814;">
+<body style="background: #ffffff;">
 
-<div style="background: #001d3d; width: 400px; height: 500px; align: center; margin: 100px 670px; border: 1px solid #001d3d; border-radius: 30px;">
+<div style="background: #faf9f9; width: 400px; height: 500px; align: center; margin: 100px 670px; border: 1px solid white; border-radius: 30px;">
 <div class="tab-content">
   <div class="tab-pane fade show active" id="pills-login" role="tabpanel" aria-labelledby="tab-login">
     <form method="post">
       {% csrf_token %}
         <br>
-      <p style="color: white;" class="text-center">Авторизуйся в DAR блог</p>
-      <img src="{% static 'blog/images/img.png' %}" height="80" width="80" style="align: center; margin-left: 150px;">
+      <p style="color: black;" class="text-center">Авторизуйся в блог чтобы читать посты</p>
+      <img src="{% static 'blog/images/batman.png' %}" height="80" width="80" style="align: center; margin-left: 150px;">
       <br><br><br>
       <!-- Email input -->
       <div class="form-outline mb-4">
@@ -33,11 +33,11 @@
       </div>
 
       <!-- Submit button -->
-      <button type="submit" class="btn btn-primary btn-block mb-4">Войти</button>
+      <button type="submit" class="btn btn-primary btn-block mb-4" style="margin-left: 160px;">Войти</button>
 
       <!-- Register buttons -->
       <div class="text-center">
-        <p style="color: white;">Еще нет аккаунта? <a href="{% url 'registration' %}" style="text-decoration: none;">Зарегистрироваться</a></p>
+        <p style="color: black;">Еще нет аккаунта? <a href="{% url 'registration' %}" style="text-decoration: none;">Зарегистрироваться</a></p>
       </div>
     </form>
   </div>

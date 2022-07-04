@@ -28,10 +28,10 @@
         <a class="nav-link" href="{% url 'write_post' %}">Написать пост</a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" href="#">Добавить категорию</a>
+        <a class="nav-link" href="{% url 'add_category' %}">Добавить категорию</a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" href="#">Профиль</a>
+        <a class="nav-link" href="#">Сообщения</a>
       </li>
         <li class="nav-item">
         <a class="nav-link" href="#">Аналитика</a>
@@ -50,6 +50,6 @@
 {% block content %}
 {% endblock content %}
 </div>
-
+{% include 'blog/footer.html' %}
 </body>
 </html>

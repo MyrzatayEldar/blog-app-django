@@ -16,21 +16,22 @@
 {% endblock %}
 
 {% block content %}
-<h2>maaaaain!!!</h2>
-
+<h2 class="main_page"><b>Главная страница. Категории</b></h2>
+<br>
+<div class="categories">
+    {% for c in cats %}
+        <div class="cat">
+            <a href="#" style="text-decoration: none; color: #283044; "><h5>{{ c.name }}</h5></a>
+        </div>
+    {% endfor %}
+</div>
+<br><br>
+<h2 class="main_page"><b>Все посты Мырзатай Эльдара</b></h2>
 {% for p in posts %}
-{{ p.author }}
-{{ p.title }}
-{{ p.text }}
+<div class="posts">
+    <img src="{{ p.image.url }}" style="display: inline-block; margin: 25px;" alt="" width="350" height="350">
+    <h4 style="margin-left: 40px; display: inline-block; margin-top: 25px;">{{ p.title }}</h4>
+</div>
 <br>
 {% endfor %}
-<h3>
-    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ab debitis est minus perspiciatis placeat quam qui sint unde. Aliquam assumenda ea eaque esse ipsa maiores possimus quasi, ratione soluta tempore.
-    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aut, cupiditate ex fugiat illum laborum modi officiis quos sint ut voluptas. Consequuntur deleniti explicabo maiores nemo neque nisi nulla reiciendis sunt!
-    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Corporis impedit ipsum officia, qui recusandae reiciendis? Ad autem cum eius exercitationem expedita fugiat ipsa, neque nostrum officiis possimus praesentium suscipit? Officia.
-    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Amet cupiditate dicta doloremque exercitationem, fuga harum illo illum labore magnam mollitia neque, officia possimus quaerat quod reprehenderit saepe sed velit, vitae?
-    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Consequatur est mollitia perferendis, quis soluta ullam vero voluptatum? A autem corporis est, facere in, iste necessitatibus odio perferendis quia, sapiente soluta!
-    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Culpa dignissimos labore officiis provident quod recusandae sit sunt suscipit velit voluptatibus! At ipsam libero necessitatibus nihil officia quae quasi temporibus vitae?
-    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Assumenda dicta incidunt labore modi molestias possimus soluta, sunt. Aliquam amet asperiores at cumque deserunt esse, inventore ipsam laboriosam officia pariatur, temporibus.
-</h3>
 {% endblock content %}

@@ -28,7 +28,13 @@ def login_view(request):
 def main(request):
     posts = Post.objects.all()
     user = request.user
-    return render(request, 'blog/main.html', {'title': f'{user}\'s page', 'posts': posts})
+    categories = Category.objects.all()
+    context = {
+        'title': f'{user}\'s page',
+        'posts': posts,
+        'cats': categories
+    }
+    return render(request, 'blog/main.html', context)
 
 
 def register_user(request):
@@ -48,7 +54,7 @@ def register_user(request):
 
 
 def show_test_page(request):
-    return render(request, 'blog/test.html', {})
+    return render(request, 'blog/footer.html', {})
 
 
 @login_required(login_url='/')
@@ -63,5 +69,18 @@ def write_post(request):
             return redirect('main')
     else:
         form = PostWritingForm
-    return render(request, 'blog/write_post.html', {'form': form, 'title': 'Страница написания поста'})
+    return render(request, 'blog/write_post.html', {'form': form,
+                                                    'title': 'Страница написания поста'})
 
+
+@login_required(login_url='/')
+def add_category(request):
+    if request.method == 'POST':
+        form = AddCategoryForm(request.POST)
+        if form.is_valid():
+            form.save()
+            return redirect('main')
+    else:
+        form = AddCategoryForm
+    return render(request, 'blog/add_cat.html', context={'form': form,
+                                                         'title': 'Добавить категорию'})

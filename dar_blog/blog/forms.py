@@ -71,3 +71,9 @@ class PostWritingForm(forms.ModelForm):
         model = Post
         exclude = ('author', 'published_date')
 #suckabiglemon
+
+
+class AddCategoryForm(forms.ModelForm):
+    class Meta:
+        model = Category
+        fields = '__all__'

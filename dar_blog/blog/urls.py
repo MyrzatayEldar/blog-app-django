@@ -10,7 +10,8 @@ urlpatterns = [
     path('registration/', register_user, name='registration'),
     path('logout/', LogoutView.as_view(next_page=settings.LOGOUT_REDIRECT_URL), name='logout'),
     path('test/', show_test_page, name='test'),
-    path('write_post/', write_post, name='write_post')
+    path('write_post/', write_post, name='write_post'),
+    path('add_category/', add_category, name='add_category')
 ]
 
 
