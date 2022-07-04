@@ -54,7 +54,7 @@ def register_user(request):
 
 
 def show_test_page(request):
-    return render(request, 'blog/footer.html', {})
+    return render(request, 'blog/test.html', {})
 
 
 @login_required(login_url='/')
