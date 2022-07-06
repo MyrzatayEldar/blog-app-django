@@ -32,7 +32,8 @@ def main(request):
     context = {
         'title': f'{user}\'s page',
         'posts': posts,
-        'cats': categories
+        'cats': categories,
+        'number': 25
     }
     return render(request, 'blog/main.html', context)
 
@@ -84,3 +85,4 @@ def add_category(request):
         form = AddCategoryForm
     return render(request, 'blog/add_cat.html', context={'form': form,
                                                          'title': 'Добавить категорию'})
+
