@@ -1,0 +1,26 @@
+{% extends 'blog/base.html' %}
+{% load static %}
+
+
+{% block title %}
+{{ title }}
+{% endblock %}
+
+
+{% block style %}
+{% endblock style %}
+
+
+{% block profile %}
+{{ request.user.username }}
+{% endblock %}
+
+{% block content %}
+<form method="post" enctype="multipart/form-data">
+    {% csrf_token %}
+    <h5>Точно хотите удалить категорию?</h5>
+    <input type="submit" value="Да, удаляй к чертовой матери" class="btn btn-danger">
+    <a href="{% url 'main' %}" class="btn btn-warning">Нет, оставь, ты че</a>
+</form>
+<h1>Страница категории {{ obj.name }}</h1>
+{% endblock content %}

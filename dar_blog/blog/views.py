@@ -1,6 +1,6 @@
 from django.contrib import messages
-from django.http import HttpResponse
-from django.shortcuts import render, redirect
+from django.http import HttpResponse, HttpResponseRedirect
+from django.shortcuts import render, redirect, get_object_or_404
 from .forms import *
 from django.contrib.auth import authenticate, login
 from django.contrib.auth.forms import UserCreationForm
@@ -86,3 +86,15 @@ def add_category(request):
     return render(request, 'blog/add_cat.html', context={'form': form,
                                                          'title': 'Добавить категорию'})
 
+
+@login_required(login_url='/')
+def detail_category(request, pk):
+    obj = get_object_or_404(Category, pk=pk)
+    context = {
+        'obj': obj,
+        'title': 'Удаление категории'
+    }
+    if request.method == 'POST':
+        obj.delete()
+        return redirect('main')
+    return render(request, 'blog/delete_cat.html', context)
