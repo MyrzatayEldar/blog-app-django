@@ -92,7 +92,7 @@ def detail_category(request, pk):
     obj = get_object_or_404(Category, pk=pk)
     context = {
         'obj': obj,
-        'title': 'Удаление категории'
+        'title': f'Категория - {obj.name}'
     }
     if request.method == 'POST':
         obj.delete()
