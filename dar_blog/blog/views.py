@@ -98,3 +98,12 @@ def detail_category(request, pk):
         obj.delete()
         return redirect('main')
     return render(request, 'blog/delete_cat.html', context)
+
+
+@login_required(login_url='/')
+def show_post(request, pk):
+    obj = get_object_or_404(Post, pk=pk)
+    context = {
+        'obj': obj
+    }
+    return render(request, 'blog/show_post.html', context)
