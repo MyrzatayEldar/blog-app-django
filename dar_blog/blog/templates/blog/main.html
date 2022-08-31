@@ -12,10 +12,6 @@
 {% endblock style %}
 
 
-{% block profile %}
-{{ request.user.username }}
-{% endblock %}
-
 {% block content %}
 <h2 class="main_page"><b>Главная страница. Категории</b></h2>
 <br>
@@ -31,7 +27,29 @@
 <br>
 <h2 class="main_page"><b>Все посты Мырзатай Эльдара</b></h2>
 <div class="main_content">
-
+<canvas id="bar-chart_1" width="800" height="450"></canvas>
+        <script>
+            new Chart(document.getElementById("bar-chart_1"), {
+    type: 'bar',
+    data: {
+      labels: ["Africa", "Asia", "Europe", "Latin America", "North America"],
+      datasets: [
+        {
+          label: "Population (millions)",
+          backgroundColor: ["#3e95cd", "#8e5ea2","#3cba9f","#e8c3b9","#c45850"],
+          data: [2478,5267,734,784,433]
+        }
+      ]
+    },
+    options: {
+      legend: { display: false },
+      title: {
+        display: true,
+        text: 'Predicted world population (millions) in 2050'
+      }
+    }
+});
+        </script>
 </div>
 {% for p in posts %}
 

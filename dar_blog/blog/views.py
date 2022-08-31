@@ -107,3 +107,18 @@ def show_post(request, pk):
         'obj': obj
     }
     return render(request, 'blog/show_post.html', context)
+
+
+@login_required(login_url='/')
+def show_music(request):
+    musics = Music.objects.all()
+    context = {
+        'musics': musics
+    }
+    return render(request, 'blog/show_music.html', context)
+
+
+@login_required(login_url='/')
+def analytics(request):
+    return render(request, 'blog/analytics.html', {})
+

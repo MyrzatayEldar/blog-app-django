@@ -1,0 +1,35 @@
+{% extends 'blog/base.html' %}
+
+
+{% block content %}
+Моя музыка, наслаждайтесь, скачивайте.
+    <table class="files">
+        <tr>
+            <th>№</th>
+            <th>Название</th>
+            <th>Файл</th>
+            <th>Размер</th>
+            <th>Расширение</th>
+            <th>Когда загружен</th>
+            <th>Описание</th>
+            <th>Проигрыватель</th>
+        </tr>
+        {% for m in musics %}
+        <tr>
+            <td>{{ forloop.counter }}</td>
+            <td>{{ m.name }}</td>
+            <td><a href="{{ m.file.url }}" download>{{ m.file.name }}</a></td>
+            <td>{{ m.file.size }}</td>
+            <td>{{ m.get_extension }}</td>
+            <td>{{ m.uploaded_at }}</td>
+            <td>{{ m.description }}</td>
+            <td>
+                <audio controls>
+                    <source src="{{ m.file.url }}" type="audio/mpeg">
+                </audio>
+            </td>
+        </tr>
+        {% endfor %}
+    </table>
+
+{% endblock content %}

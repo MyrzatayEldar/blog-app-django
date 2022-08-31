@@ -12,7 +12,9 @@ urlpatterns = [
     path('test/', show_test_page, name='test'),
     path('write_post/', write_post, name='write_post'),
     path('add_category/', add_category, name='add_category'),
-    path('detail_category/<int:pk>', detail_category, name='detail_category')
+    path('detail_category/<int:pk>', detail_category, name='detail_category'),
+    path('show_music/', show_music, name='show_music'),
+    path('analytics/', analytics, name='analytics')
 ]
 
 
